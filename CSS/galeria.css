@@ -1,0 +1,1145 @@
+/*----------TIPOGRAFIA------------*/
+@font-face {
+    font-family: Montserrat;
+    src: url(../font/Montserrat-Thin\ 100.ttf) format("truetype");
+    font-weight: 100;
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../font/Montserrat-ExtraLight\ 200.ttf) format("truetype");
+    font-weight: 200;
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../font/Montserrat-Light\ 300.ttf) format("truetype");
+    font-weight: 300;
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../font/Montserrat-Regular\ 400.ttf) format("truetype");
+    font-weight: 400;
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../font/Montserrat-Medium\ 500.ttf) format("truetype");
+    font-weight: 500;
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../font/Montserrat-SemiBold\ 600.ttf) format("truetype");
+    font-weight: 600;
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../font/Montserrat-Bold\ 700.ttf) format("truetype");
+    font-weight: 700;
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../font/Montserrat-ExtraBold\ 800.ttf) format("truetype");
+    font-weight: 800;
+}
+@font-face {
+    font-family: Montserrat;
+    src: url(../font/Montserrat-Black\ 900.ttf) format("truetype");
+    font-weight: 900;
+}
+
+
+/*-----------VARIABLES------------*/
+@property --color-dominante {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #641fa8;
+}
+@property --color-background {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #e9f6ff;
+}
+@property --color-secundario {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #ab6fea;
+}
+@property --color-complementario {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #0d6cac;
+}
+@property --color-especifico {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #f43e3a;
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Montserrat";
+    margin: 0;
+}
+h1,h2,h3,h4,h5,h6,ul{
+    margin: 0;
+    padding: 0;
+    text-wrap: balance;
+}
+p{
+    text-wrap: pretty;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/*-----------HEADER BARRA DE NAVEGACION---------*/
+.encabezado-header {
+    background-color: var(--color-background);
+    color: var(--color-dominante);
+    box-shadow: 0 0 7px 0 #2224;
+    padding: 10px 10px;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    bottom: 0;
+    border-radius: 15px 15px 0 0;
+}
+.encabezado__logo, .encabezado__navegacion-link {
+    color: inherit;
+}
+.encabezado__logo-container {
+    display: none;
+}
+.encabezado__navegacion {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+.encabezado__navegacion-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: clamp(.8rem, 5vw, 1rem);
+    font-weight:600;
+}
+.encabezado__navegacion-item i{
+    font-size: clamp(.7rem, 5vw, 1rem);
+}
+.encabezado__navegacion-link:not(:hover) {
+    text-decoration: none;
+}
+
+/*-------------FRASE MOBILE----------*/
+.frase__logo-container {
+    background-color: var(--color-background);
+    padding: 10px;
+    font-size: clamp(1rem, 5vw, 1.2rem);
+}
+.frase__logo {
+    color: var(--color-dominante);
+    text-align: center;
+    font-weight: 700;
+    font-family: bell mt;
+}
+
+/*-------HEADER ENCABEZADO ENDS--------*/
+
+/*----------BANNER HYJ-----------*/
+.banner-querie {
+    container-type: inline-size;
+    container-name: banner;
+    background:linear-gradient(#0009 ,#0009), url(../img/banner\ 2.gif) center / cover fixed;
+}
+.banner-container {
+    color:#fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    height: calc(100dvh - 40px);
+    padding: 0 20px;
+    width: clamp(0px, 100% , 1280px);
+    margin: auto;
+    animation: aparecer .8s linear both;
+    gap: 20px;
+    overflow: auto;
+}
+
+.banner__data-text {
+    text-align: justify;
+    font-size: clamp(.7rem , 2vw, 1rem);
+    width: clamp(0px , 100% , 400px);
+    margin: auto;
+}
+.banner__data-title {
+    font-size: clamp(1.3rem, 5vw, 2.5rem);
+    margin-bottom: 5px;
+}
+.banner__data-title span {
+    color: var(--color-especifico);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.banner__data-title span i {
+    font-size: clamp(1rem, 5vw, 1.8rem);
+}
+.banner__data-link {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 30px;
+    font-weight: 500;
+    padding: 4px 12px;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    position: relative;
+    color: #fff;
+    background: var(--color-especifico);
+    border-radius: 4px;
+    box-shadow: 0 0 10px 0 #fff9;
+    transition: .5s;
+    animation: outline-efect 1.3s infinite both;
+}
+.data__link-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+.banner__data-link::before {
+    content: " ";
+    position: absolute;
+    animation: borde-animado 4s linear infinite  both;
+}
+
+.banner__data-link::after {
+    content: " ";
+    position: absolute;
+    animation: borde-animation-two 4s linear infinite both;
+}
+.banner__img-container {
+        display: block;
+        width:clamp(100px, 80%, 250px);
+        height: 250px;
+        justify-self: center;
+        border-radius: 100%;
+        overflow: hidden;
+        transition: transform .6s;
+        animation: sombra 4s linear infinite alternate both;
+        background: url(../img/fotos-HYJ/foto-10.jpeg) top / cover;
+        box-shadow: 0 0 20px 0 #fff4;
+    }
+.banner__img-container img {
+        width: 100%;
+        height:100% ;
+        object-fit: cover;
+        object-position: top;
+        animation: opacity-img 4s linear infinite alternate both;
+    }
+
+
+/*--------PAREJA HYJ ------------*/
+.pareja-querie {
+    container-name: pareja;
+    container-type: inline-size;
+    padding: clamp(30px, 5vw, 70px) 30px;
+    position: relative;
+    background: linear-gradient(#d9d6efe5, #d9d6efe5) ,url(../img/banner-bory.avif);
+}
+
+.pareja-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    max-width: 1280px;
+    margin: auto;
+}
+.pareja {
+    box-shadow: 0 0 10px 3px var(--color-secundario);
+    color: var(--color-dominante);
+    width: clamp(100px, 100%, 410px);
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #f0eef3;
+    animation: pareja  both;
+    animation-timeline: view();
+    animation-range: cover 20% cover 40%;
+}
+
+.pareja__img-container {
+    max-width: 100%;
+    height: clamp(150px, 55vw, 380px);
+}
+.pareja__img-container img {
+    width: 100%;
+    height: 100%;
+    object-position: top;
+    object-fit: cover;
+}
+.pareja__data-container {
+    padding: clamp(3px, 1.5vw, 20px) clamp(10px, 3.7vw, 20px) clamp(10px, 3vw, 20px);
+}
+.pareja__data-title {
+    font-size: clamp(1.1rem, 5vw, 1.6rem);
+    margin-bottom: 5px;
+}
+.pareja__data-list{
+    color: #3ba8e7;
+    font-weight: 500;
+    margin-left: 15px;
+    font-size: clamp(.7rem, 4vw, 1rem);
+}
+.pareja__data-item::marker {
+    content: "♥ ";
+    color: var(--color-secundario);
+}
+.pareja__skill-container {
+    list-style: none;
+    margin-top: 15px;
+}
+.pareja__item {
+    background-color: #641fa855;
+    border-radius: 20px;
+}
+.pareja__name-skill{
+    font-weight: 600;
+    padding-top:clamp(0px, .5vw,5px)  ;
+    font-size: clamp(.9rem, 5vw, 1.15rem);
+}
+.pareja__skill {
+    color: #f0eef3;
+    background-color: var(--color-secundario);
+    font-weight: 500;
+    padding: 2px 7px 2px 10px;
+    display: block;
+    width: 70%;
+    font-size: clamp(.7rem, 4vw, 1rem);
+    border-radius: 20px;
+}
+/*------JOSE CANALES---------*/
+.jose {
+    box-shadow: 0 0 10px 3px var(--color-complementario );
+    background-color:var(--color-background);
+}
+.jose :is(.pareja__data-title, .pareja__name-skill){
+    color: var(--color-complementario);
+}
+.jose :is(.pareja__data-list) {
+    color: var(--color-secundario);
+}
+.jose .pareja__data-item::marker {
+    color: #3ba8e7;
+}
+.jose .pareja__skill {
+    background-color: #3ba8e7;
+    color: var(--color-background);
+}
+.jose .pareja__item {
+    background-color: #1684c455;
+}
+
+.prueba {
+    position: absolute;
+    height: calc(50% + 20px);
+    width: 100dvw;
+    right: 0;
+    bottom: 0;
+    background: #abe0f8;
+    opacity: .6;
+    clip-path: polygon(32% 5%, 20% 0, 9% 5%, 0 0, 0 100%, 100% 100%, 100% 5%, 89% 0, 77% 4%, 66% 0, 55% 5%, 44% 0);
+}
+
+
+/*-----EXPERIENCIAS VIVIDAS---------*/
+.experiencia-querie {
+    container-type: inline-size;
+    container-name: experiencia;
+    overflow: hidden;
+}
+.experiencia-container {
+    height: 90dvh;
+    background: linear-gradient(#e9f6ff99, #e9f6ff99), url(../img/fotos-HYJ/foto-9.jpeg) top / cover fixed;
+}
+.experiencia__img-container {
+    display: none;
+}
+.experiencia__data-container {
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.experiencia__data-list {
+    list-style: none;
+    font-weight: 600;
+    font-size: clamp(.8rem, 3.5vw, 1rem);
+}
+.experiencia__data {
+    margin-bottom: 5px;
+}
+.experiencia__data i{
+    color: var(--color-especifico);
+    margin-right:10px ;
+}
+.experiencia__data-title{ 
+    font-size: clamp(1.3rem, 6vw, 2rem);
+    position: relative;
+    text-align: center;
+}
+.experiencia__data-title:before {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    animation: borde-sombra 1.2s linear infinite alternate both;
+
+}
+.experiencia__animation-container {
+    height: 150px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.experiencia__animation-img {
+    width: clamp(100px,15vw,130px);
+    position: absolute;
+    top: 5%;
+}
+.pinguino {
+    animation: pinguino 5.5s infinite both;
+}
+
+.brillo {
+    animation: brillo 5.5s infinite both;
+}
+
+.experiencia__animation-img img {
+    max-width: 100%;
+    filter: drop-shadow(0 0 3px #000);
+}
+
+.experiencia__data-title span {
+    color: var(--color-especifico);
+}
+.experiencia__data-principal {
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+}
+
+/*----------EXPERIENCIAS VIVIDAS ENDS-------*/
+
+/*---------GALERIA HYJ-----------*/
+.galeria-querie {
+    background: linear-gradient(#0007,#0007), url(../img/banner\ 2.gif) center / cover fixed;
+    container-type: inline-size;
+    container-name: galeria;
+    padding: clamp(35px, 5vw, 60px) 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.galeria-title-principal {
+    color: var(--color-background);
+    margin-bottom: clamp(10px, 2.5vw, 20px);
+    font-size: clamp(1.6rem, 5vw, 3rem);
+    position: relative;
+    text-align: center;
+}
+.galeria-title-principal:before {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    height: clamp(2px,.5vw,4px);
+    background-color: var(--color-background);
+    animation: title-barra 2s infinite alternate both;
+}
+
+.galeria-container {
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr);
+    grid-template-rows: clamp(230px, 30vw, 320px);
+    grid-auto-rows: clamp(230px,30vw, 320px);
+    max-width: 1280px;
+    margin: auto;
+    gap: 5px;
+}
+.galeria-item {
+    position: relative;
+    overflow: hidden;
+    animation: pareja both;
+    animation-timeline: view();
+    animation-range: cover 20% cover 50%;
+}
+
+.galeria-item::before {
+    content: " ";
+    position: absolute;
+    height: 200%;
+    width: 20%;
+    background-color: #fff;
+    transform: rotate(40deg);
+    filter: blur(40px);
+    left: -100%;
+    top: -50%;
+    z-index: 10;
+}
+.galeria-item:hover::before {
+    left: 200%;
+    transition-duration: 1.5s;
+}
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    position: relative;
+    transition: transform .5s;
+}
+.galeria-item:hover img {
+    transform: scale(1.1);
+}
+.galeria-item:nth-child(10) img {
+    object-position: center;
+}
+.galeria-title {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    padding: 0 10px;
+    justify-content: center;
+    background: linear-gradient(transparent 80%, #000c);
+    font-size: clamp(.7rem, 2vw, .9rem);
+    color: var(--color-background);
+}
+/*-----------GALERIA HYJ ENDS---------*/
+
+
+/*----------FORMULARIO HYJ------------*/
+.form-querie {
+    container-name: form;
+    container-type: inline-size;
+    padding: clamp(20px, 4vw, 60px) 20px;
+    background: linear-gradient(#e9f6ffcc, #e9f6ffcc), url(../img/banner-bory.avif);
+}
+.form-container {
+    background-color: var(--color-background);
+    box-shadow: 0 0 10px 0 #641fa899;
+    border-radius: 5px;
+    max-width: 650px;
+    margin: auto;
+    padding: 15px clamp(10px, 2.5vw, 20px);
+    animation: pareja both;
+    animation-timeline: view();
+    animation-range: cover 10% cover 40%;
+    overflow: hidden;
+}
+.form-title {
+    color: var(--color-dominante);
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    text-align: center;
+    margin-bottom: clamp(10px, 2.5vw, 20px);
+}
+.form {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: 
+    "name name"
+    "edad fan"
+    "movie food"
+    "durar durar"
+    "textarea textarea"
+    "submit submit"
+    ;
+    gap: 5px 10px;
+
+}
+.form__info-title {
+    color: var(--color-secundario);
+    font-weight: 600;
+    font-size: clamp(.85rem, 2.5vw, 1.2rem);
+}
+.form__info,textarea {
+    display: block;
+    width: 100%;
+    resize: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #641fa877;
+    margin-bottom: 7px;
+    color: var(--color-complementario);
+    font-size: clamp(.7rem, 2.5vw, 1rem);
+    font-family: Montserrat;
+    font-weight: 500;
+}
+
+::placeholder {
+    color: #0007;
+}
+.form__info:focus-visible,textarea:focus-visible{
+    outline: none;
+}
+.form__info-container:has(#name) {
+    grid-area: name;
+}
+.form__info-container:has(#edad){
+    grid-area: edad;
+}
+.form__info-container:has(#fan) {
+    grid-area:fan;
+}
+.form__info-container:has(#movie) {
+    grid-area: movie;
+}
+.form__info-container:has(#food) {
+    grid-area: food;
+}
+.form__info-container:has(#durar) {
+    grid-area: durar;
+}
+.form__info-container:has(textarea) {
+    grid-area: textarea;
+}
+#reset, #aceptar {
+    width: min-content;
+    border-bottom: none;
+    background-color: var(--color-secundario);
+    color: var(--color-background);
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#reset:hover, #aceptar:hover {
+    background-color: var(--color-dominante);
+}
+#reset {
+    justify-self: start;
+}
+#aceptar {
+    justify-self: end;
+}
+.form__img-container{ 
+    grid-area: 6/span 2 ;
+    justify-self: center;
+    max-width: 150px;
+    padding: 10px 0;
+}
+.form__img-container img {
+    max-width: 100%;
+}
+.footer-container {
+    background-color: var(--color-dominante);
+    color: var(--color-background);
+    padding: 10px 10px 70px;
+}
+.footer-text {
+    text-align: center;
+    font-weight: 500;
+    font-size: .8rem;
+}
+.footer-text span {
+    font-weight: 800;
+}
+/*--------FORMULARIO HYJ ENDS-----------*/
+
+
+/*-------------RESPONSIVE DESING---------*/
+@container galeria (min-width:350px) {
+    .galeria-container {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(150px,1fr));
+    }
+}
+@container form (min-width:400px) {
+    .form {
+        grid-template-areas: 
+        "name name"
+        "edad fan"
+        "movie food"
+        "durar durar"
+        "textarea textarea"
+        "submit submit"
+        ;
+    }
+}
+/*---------(MEDIA QUERIE: 500PX)--------*/
+@media screen and (min-width:500px) {
+    /*--------HEADER--------*/
+    .frase__logo-container {
+        display: none;
+    }
+    .encabezado__logo-container {
+        display: block;
+    }
+    .encabezado__logo {
+        font-weight: 700;
+        font-family: bell mt;
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+    }
+    .encabezado-header{ 
+        position: sticky;
+        border-radius: 0;
+        top: 0;
+        animation: barra-nav both;
+        animation-timeline: scroll();
+        animation-range: cover 5% cover 30%;
+    }
+    .encabezado-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1280px;
+        margin: auto;
+    }
+    .encabezado__navegacion {
+        gap: 20px;
+    }
+    .encabezado__navegacion-item {
+        position: relative;
+    }
+    .encabezado__navegacion-item:hover {
+        color: #222;
+    }
+    .encabezado__navegacion-item i {
+        position: absolute;
+        bottom: -3px;
+        opacity: 0;
+        transition-duration: .3s ;
+    }
+    .encabezado__navegacion-item:hover i{
+        bottom: 18px;
+        opacity: 1;
+    }
+    .encabezado__navegacion-link {
+        text-decoration: none;
+        font-size: clamp(1rem, 2vw, 1rem);
+    }
+    .encabezado__navegacion-item::before {
+        content: " ";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        transition-duration: .3s;
+        background-color: #222;
+    }
+    .encabezado__navegacion-item:hover::before {
+        width: 100%;
+    }
+    /*--------BANNER----------*/
+    .banner-container {
+        height: calc(100dvh - 62px);
+    }
+    /*------GALERIA IMG ----------*/
+    .galeria-container {
+        grid-template-columns: repeat(auto-fill, minmax(clamp(150px, 45vw, 260px),1fr));
+    }
+    /*----------FOOOTER--------*/
+    .footer-container {
+        padding: clamp(10px,3vw,30px) 10px;
+    }
+    .footer-text {
+        font-size: .9rem;
+    }
+}
+/*---------BANNER CONTAINER QUERIE 650PX-----------*/
+@container banner (min-width:650px){
+    .banner-container {
+        height: calc(100dvh - 74px);
+        text-align: left;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    .banner__img-container {
+        width: 300px;
+        height: 300px;
+    }
+    .banner__data-title span {
+        justify-content: start;
+    }
+    .banner__data-text{
+        margin: 0;
+        width: clamp(0px, 100%, 600px);
+    }
+    .banner__data-link {
+        margin-left: 60px;
+    }
+}
+@container experiencia (min-width:650px) {
+    .experiencia-container {
+        background: linear-gradient(#e9f6ffee, #e9f6ffee), url(../img/banner-bory.avif);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100%;
+    }
+    .experiencia__data-container {
+        padding: 20px;
+    }
+    .experiencia__data-title {
+        font-size: clamp(1.4rem, 2.5vw, 3rem);
+    }
+    .experiencia__data-list {
+        font-size: clamp(.9rem, 1.5vw, 1.5rem);
+    }
+    .experiencia__data-principal{
+        color: #000;
+        gap: 20px;
+    }
+    .experiencia__img-container {
+        display: block;
+        position: relative;
+    }
+    .experiencia__img-container::before {
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to right , transparent 60%, #0008);
+        z-index: 1;
+    }
+    .experiencia__img-container img {
+        width: 100%;
+        display: block;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        filter: saturate(1.6);
+    }
+
+}
+@container pareja (min-width:700px) {
+    .pareja-container {
+        flex-direction:row;
+        justify-content: space-between;
+    }
+    .pareja__data-title{
+        font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    }
+    .pareja__name-skill {
+        font-size: clamp(.9rem, 2vw, 1.15rem);
+        padding-top:clamp(0px, .1vw,5px)  ;
+    }
+    .pareja__img-container {
+        height: clamp(250px, 30vw, 380px);
+    }
+    .pareja {
+        width: clamp(0px, 100%, 500px);
+        height: clamp(640px, 67vw, 770px);
+    }
+    .pareja__data-list {
+        font-size: clamp(.9rem, 1.5vw, 1.1rem);
+    }
+    .prueba {
+        height: 100%;
+        width: calc(50dvw + 10px);
+        right: 0;
+        clip-path: polygon(0 24%, 5% 35%, 0 48%, 6% 58%, 0 67%, 6% 76%, 0 88%, 6% 100%, 100% 100%, 100% 0, 0 0, 5% 11%);
+    }
+}
+@container banner (min-width:900px) {
+    .banner__img-container {
+        width: 400px;
+        height: 400px;
+    }
+    .banner__data-link {
+        padding: 6px 25px;
+    }
+}
+
+
+/*--------BANNER HTJ ENDS-------*/
+
+
+/*----------ANIMACIONES-----------*/
+@keyframes barra-nav { 
+    0% {
+        padding: 25px 20px;
+        background-color: var(--color-background);
+        color: var(--color-dominante);
+    }
+    100% {
+        padding: 15px 20px;
+        background-color: #ab6feadd;
+        color: var(--color-background);
+    }
+}
+@keyframes pareja {
+    0%{
+        opacity: 0;
+        transform: translateY(250px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aparecer {
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    30% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes borde-animado {
+    0%{
+        width: 3px;
+        height: 2px;
+        right: 98%;
+        top: 0;
+        background: #fff;
+    }
+    15% {
+        width: 20%;
+    }
+    25% {
+        right: 0%;
+        width: 3px;
+        height: 2px;
+        top: 0;
+    }
+    40% {
+        height: 50%;
+    }
+    50% {
+        right: 0;
+        width: 3px;
+        height: 2px;
+        top: 92%;
+    }
+    65% {
+        width: 20%;
+    }
+    75% {
+        right: 98%;
+        top: 92%;
+        width: 3px;
+        height: 2px;
+    }
+    90% {
+        height: 50%;
+    }
+    100% {
+        right: 98%;
+        top: 0;
+        width: 3px;
+        height: 2px;
+        background-color: #fff;
+    }
+}
+
+@keyframes borde-animation-two {
+    0%{
+        width: 3px;
+        height: 2px;
+        left: 98%;
+        top: 92%;
+        background: #fff;
+    }
+    15% {
+        width: 20%;
+    }
+    25% {
+        left: 0%;
+        width: 3px;
+        height: 2px;
+        top: 92%;
+    }
+    40% {
+        height: 50%;
+    }
+    50% {
+        left: 0;
+        width: 3px;
+        height: 2px;
+        top: 0;
+    }
+    65% {
+        width: 20%;
+    }
+
+    75% {
+        left: 98%;
+        top: 0;
+        width: 3px;
+        height: 2px;
+    }
+    90% {
+        height: 50%;
+    }
+    100% {
+        left: 98%;
+        top: 92%;
+        width: 3px;
+        height: 2px;
+        background-color: #fff;
+    }
+}
+@keyframes outline-efect {
+    0% {
+        outline-offset: -4px;
+        opacity: 1;
+        outline: 2px solid #f43e3a;
+    }
+    100% {
+        outline: 2px solid #f43e3a00;
+        outline-offset: 15px;
+    }
+}
+@keyframes sombra {
+    0%{ 
+        transform: rotateY(0deg);
+    }
+    40% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+@keyframes opacity-img{ 
+    0% {
+        opacity: 0;
+    }
+    45% {
+        opacity: 0;
+    }
+    46% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes pinguino {
+    0% {
+        transform: scale(.8);
+        left: -100%;
+    }
+    15% {
+        transform: scale(.8);
+        left: 45%;
+    }
+    20% {
+        transform:  rotate(0deg) scale(.8);
+    }
+    25% {
+        transform: rotate(20deg) scale(.8);
+    }
+    30% {
+        transform: rotate(-20deg) scale(.8);
+    }
+    35% {
+        transform:  rotate(20deg) scale(.8);
+    }
+    40% {
+        transform: rotate(-20deg) scale(.8);
+    }
+    45% {
+        transform: rotate(0deg) scale(.8);
+    }
+    55% {
+        transform:  scale(.8);
+    }
+    80% {
+        transform:  scale(1.05) rotateY(0deg);
+    }
+    85%{
+        transform:  scale(1.05) rotateY(180deg);
+    }
+    90% {
+        transform:  scale(1.05) rotateY(180deg);
+        left: 45%;
+    }
+    100% {
+        transform: scale(1.05) rotateY(180deg);
+        left: 110%;
+    }
+}
+@keyframes brillo {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+        transform: scale(.5) ;
+        left: 45%;
+    }
+    50% {
+        opacity: 1;
+        transform: scale(.5) ;
+        left: 20%;
+    }
+    55% {
+        transform: scale(.5) ;
+        left: 20%;
+    }
+    80% {
+        transform: scale(.9) ;
+        left: 15%;
+    }
+    90% {
+        transform: scale(.9) ;
+        left: 15%;
+    }
+    100% {
+        transform: scale(.9) ;
+        left: 100%;
+    }
+}
+@keyframes borde-sombra {
+    0%{
+        box-shadow: 0 -5px 10px 0 var(--color-background);
+        opacity: 0;
+        filter: drop-shadow( 0 -5px 20px var(--color-background));
+    }
+    50% {
+        opacity: 1;
+        box-shadow: 0 -20px 30px 5px var(--color-especifico);
+        background-color: var(--color-especifico);
+        filter: drop-shadow( 0 -10px 30px var(--color-especifico));
+    }
+    100%{
+        opacity: 1;
+        box-shadow: 0 -20px 30px 5px var(--color-especifico);
+        background-color: var(--color-especifico);
+        filter: drop-shadow( 0 -10px 30px var(--color-especifico));
+    }
+}
+@keyframes title-barra {
+    0%{ 
+        width: 15%;
+    }
+    100%{
+        width: 60%;
+    }
+}
